@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		let number = prompt("Enter task number 1-16")
+		eval("task" + number + "()");
+
+		 function task1() {
+		 var x = parseInt(prompt("Enter x"))
+		 alert(x*x + 2*x -1)
+		}
+		
+		function task2() {
+		var a = parseInt(prompt("Enter a"))
+		var b = parseInt(prompt("Enter b"))
+		if (a%b==0) alert("Divisible")
+			else	alert("Not Divisible")
+		}
+
+		function task3() {
+		var name = prompt("Enter name:")
+		var surname = prompt("Enter surname:")
+		var city = prompt("Enter city:")
+		var age = prompt("Enter age:")
+		alert("Name: " + name + "\n" +
+			"Surname: " + surname + "\n" +
+			"City: " + city + "\n" + 
+			"Age: " + age)
+		}
+
+		function task4() {
+		var a = parseInt(prompt("Enter a"))
+		var b = parseInt(prompt("Enter b"))
+		var c = parseInt(prompt("Enter c"))
+		alert("a+b+c= " + (a+b+c) + "\n" +
+			"a-b-c= " + (a-b-c) + "\n" +
+			"a*b*c= " + (a*b*c))
+		}
+
+		function task5() {
+		var n = parseInt(prompt("Enter number of schoolboys -n-"))
+		var k = parseInt(prompt("Enter number of apples -k-"))
+		alert("Apples for one schoolboys --- " + (n%k))
+		}
+
+		function task6() {
+		var a = parseInt(prompt("Enter katet1"))
+		var b = parseInt(prompt("Enter katet2"))
+		alert("Gipotinuza " + Math.sqrt(a*a + b*b))
+		}
+
+		function task7() {
+		var x = parseInt(prompt("Enter Vsred "))
+		var y = parseInt(prompt("Enter distance "))
+		if ((y/x) * 60 > 135) alert("NO, YOU CAN NOT REACH")
+			else alert("YES, YOU CAN REACH")
+		}
+
+		function task8() {
+		var a = parseInt(prompt("Enter how many wiskas you need "))
+		if (a*120 > 4000) alert(a*120*0.9)
+			else alert(a*120)
+		}
+
+		function task9() {
+		var a = prompt("INSERT YOUR AMOUNT IN KZT:")*1
+		var b = prompt("1- CONVERT TO USD \n 2- CONVERT TO EUR \n 3- CONVERT TO GBP")
+		if (b==1) alert(a + " KZ = " + parseFloat(a/380,2).toFixed(2) + " USD")
+			else if (b==2) alert(a + " KZ = " + parseFloat(a/430).toFixed(2) + " EUR")
+				else if (b==3) alert(a + " KZ = " + parseFloat(a/480).toFixed(2) + " GBP")
+					else alert("Error in convertation")
+		}
+
+		function task10() {
+		var log = prompt("INSERT LOGIN:")
+		var pas = prompt("INSERT PASSWORD:")
+		if(log == "user" && pas == "qwerty") alert("Authentication completed")
+			else alert("Invalid login or password")
+		}
+
+		function task11() {
+		var god = parseInt(prompt("Insert year"))
+		if (god > 0 && god <=30000) {
+			if (god % 400 == 0) alert("YES")
+				else if (god % 4 ==0 && god % 100 != 0) alert("YES")
+					else alert("NO")
+		} else alert("Error in year value")
+		}
+
+		function task12() {
+		var points = parseInt(prompt("Insert points"))
+		if (89 < points && points < 101) alert("A")
+			else if (74 < points && points < 90) alert("B")
+				else if (59 < points && points < 75) alert("C") 
+					else if (49 < points && points < 60) alert("D")
+						else ("F")
+		}
+
+		function task13() {
+		var select = prompt("Choose your branch: \n 1 - Science, 2 - Humanitarian subjects, 3 - Art, 4 - Sport:")
+		if (select == 1) {
+			select = prompt("1 - Math, 2 - Physics:")
+				if (select == 1) alert("You are Financier")
+					else if (select == 2) alert("You are Engineer")
+						else alert("Incorect insert")
+		} else if (select == 2) {
+			select = prompt("1 - History, 2 - Foreign Languages:")
+				if (select == 1) alert("You are Historic or Diplomat")
+					else if (select == 2) alert("You are Translator")
+						else alert("Incorect insert")
+		} else if (select == 3) {
+			select = prompt("1 - Drawing, 2 -Singing:")
+				if (select == 1) alert("You are Painter or Architect")
+					else if (select == 2) alert("You are Singer or Tamada")
+						else alert("Incorect insert")
+		} else if (select == 4) {
+			select = prompt("1 - Team, 2 - Individual:")
+				if (select == 1) alert("You are footballer or Basketball player")
+					else if (select == 2) alert("You are boxer or tennis player")
+						else alert("Incorect insert")
+		} else alert("Incorect insert")
+		}
+
+		function task14() {
+		var a = parseInt(prompt("Enter a"))
+		var b = parseInt(prompt("Enter b"))
+		var c = parseInt(prompt("Enter c"))
+		if (a + b > c && a + c > b && b + c > a) alert("YES")
+			else alert("NO")
+		}
+
+		function task15() {
+		var a = parseInt(prompt("Enter tg value for convertation"))
+		var result = parseFloat(a/380).toFixed(2)
+		var result2 = parseInt(a/380)
+		var result3 = ((result - result2)*100).toFixed(0)
+		if(result3 == 0) alert("Only " + result2 + " USD")
+			else alert(result2 + " USD and " + result3 + " cents")
+		}
+
+		function task16() {
+		var a = parseInt(prompt("Enter value for hours and minutes convertation"))
+		var h = parseInt(a/60)
+		var m = a%60
+		if (m == 0) alert("Only " + h + " hours")
+			else alert(h + " hours and " + m + " minutes")
+		}
+
+	</script>
+</body>
+</html>
