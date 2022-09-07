@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var tnum = parseInt(prompt("Enter task number"))
+		eval("task" + tnum + "()")
+		
+		function task1() {
+		var n = parseInt(prompt("Enter n"))
+		let arr = [] 
+		for (var i = 0; i < n; i++) {
+			var a = prompt()
+			arr.push(a)
+		}
+		for (var i = n-1; i >= 0; i--)
+			console.log(arr[i])
+		}
+
+		function task2() {
+		var n = parseInt(prompt("Enter n"))
+		let arr = [] 
+		let max = Number.MIN_VALUE
+		for (var i = 0; i < n; i++) {
+			var a = prompt()
+			arr.push(a)
+			if(arr[i] > max) max = arr[i]
+		}
+		alert(max)
+		}
+
+		function task3() {
+		var n = parseInt(prompt("Enter n"))
+		let arr = [] 
+		let sum = 0
+		for (var i = 0; i < n; i++) {
+			var a = parseInt(prompt())
+			arr.push(a)
+			sum += arr[i]
+		}
+		alert("Sum " + sum + " Sr " + (sum/n))
+		}
+
+		function task4() {
+		var n = parseInt(prompt("Enter n"))
+		let arr = [] 
+		let string = ""
+		for (var i = 0; i < n; i++) {
+			var a = parseInt(prompt())
+			arr.push(a)
+			string += (arr[i]*arr[i] + " ")
+		}
+		alert(string)
+		}
+
+		function task5() {
+		let users = [
+    		{"login":"ilyas", "password": "qwerty"},
+    		{"login":"eldar", "password": "qqqqq"},
+    		{"login":"assylkhan", "password": "qweqwe"},
+    		{"login":"anel", "password": "asdasd"},
+    		{"login":"alibek", "password": "aaaaaa"}
+    		]
+    	let login = prompt("Enter login")
+    	let password = prompt("Enter password")
+    	let identific = -1
+		for(var i=0;i<users.length;i++) {
+    		if(users[i]["login"] == login && users[i]["password"] == password)
+    			identific = i
+		}
+		if(identific == -1) alert("User not found")
+		else alert("Welcome, you are authenticated")
+		}
+
+		function task6() {
+		let users = [
+    		{"name":"Harry Potter and the Stone", "author": "Joanne Rowling", "ISBN": "1233123", "price":"50$"},
+    		{"name":"Harry Potter and the Chamber", "author": "Joanne Rowling", "ISBN": "222332", "price":"40$"},
+    		{"name":"Harry Potter and the Prisoner", "author": "Joanne Rowling", "ISBN": "452323", "price":"55$"},
+    		{"name":"Airport", "author": "Arthur Hailey", "ISBN": "2341233", "price":"55$"},
+    		{"name":"Jane Eyre", "author": "Charlotte Bronte", "ISBN": "2341455", "price":"60$"},
+    		{"name":"Airport", "author": "Arthur Hailey", "ISBN": "2341233", "price":"55$"},
+    		]
+    	let toauthor = prompt("Enter author for search")
+    	tostring = ""
+		for(var i=0;i<users.length;i++) {
+    		if(users[i]["author"] == toauthor)
+    			console.log(users[i]["name"] +" "+ users[i]["author"] +" "+ users[i]["ISBN"] +" "+ users[i]["price"])    	
+		}
+		}
+	
+	</script>
+</body>
+</html>
