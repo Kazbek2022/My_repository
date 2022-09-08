@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Task 7</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var tnum = parseInt(prompt("Enter task number"))
+		eval("task" + tnum + "()")
+		
+		function task1() {
+		var n = parseInt(prompt("Enter n"))
+		let arr = [] 
+		for (var i = 0; i < n; i++) {
+			var a = prompt()
+			arr.push(a)
+		}
+		var m = parseInt(prompt("Enter m"))
+		var index = -1
+		for (var i = n-1; i >= 0; i--)
+			if(arr[i] == m) index = i
+		if(index != -1) alert("YES " + index)
+			else alert("NO")
+		}
+		
+		function task2() {
+		var srGeom=1
+		let arr = [] 
+		while(true) {
+			var x = parseInt(prompt("Enter x"))
+			if(x==0) break
+			arr.push(x)
+			srGeom *= x 
+		}
+		alert(Math.pow(srGeom,1/arr.length).toFixed(3))
+		}
+
+		function task3() {
+		let arr = [] 
+		while(true) {
+			var x = parseInt(prompt("Enter x"))
+			if(x==0) break
+			arr.push(x)
+		}
+		var toString = ""
+		for(var i=0; i<arr.length; i++)
+			if(arr[i]>0) toString += arr[i] + " "
+		alert(toString)
+		}
+
+		function task4() {
+		var n = parseInt(prompt("Enter n"))
+		let arr = [] 
+		for (var i = 0; i < n; i++) {
+			var a = prompt()
+			arr.push(a)
+		}
+		var multiply = 1
+		for (var i = 0; i < n; i++)
+			if(arr[i] != 0) multiply *= arr[i]
+		alert(multiply)
+		}
+
+		function task5() {
+		cars = [
+   			{"name":"Toyota", "price": 12000000, "year": 2015, "volume": 2.2},
+   			{"name":"Mercedes", "price": 70000000, "year": 2018, "volume": 3.8},
+   			{"name":"Mercedes", "price": 80000000, "year": 2019, "volume": 3},
+ 		    {"name":"Toyota", "price": 7000000, "year": 2013, "volume": 2.0},
+    		{"name":"BMW", "price": 11000000, "year": 2011, "volume": 3.0},
+    		{"name":"BMW", "price": 12000000, "year": 2010, "volume": 5.0},
+    		{"name":"Lexus", "price": 60000000, "year": 2017 ,"volume": 5.7},
+    		{"name":"Lexus", "price": 70000000, "year": 2018 ,"volume": 5}
+			]
+		while(true) {
+			var toString =""
+			var select = parseInt(prompt("INSERT [1] TO SEARCH BY NAME \n INSERT [2] TO SEARCH BY YEAR \n INSERT [3] TO SEARCH BY ENGINE VOLUME \n INSERT [4] TO SEARCH BY PRICE \n INSERT [5] TO EXIT"))
+			if(select == 1) {
+				var selectName = prompt("INSERT NAME OF CAR:")
+				for(let i=0; i<cars.length; i++)
+					if(selectName == cars[i]["name"]) 
+						toString += (cars[i]["name"] + " price: " + cars[i]["price"] + " year: " + cars[i]["year"] + " volume: " + cars[i]["volume"] + "\n")
+				alert(toString)
+			} else if(select == 2) {
+				var selectYear1 = parseInt(prompt("INSERT YEAR START FROM:"))
+				var selectYear2 = parseInt(prompt("INSERT YEAR ENDS FROM:"))
+				for(let i=0; i<cars.length; i++)
+					if(selectYear1 <= cars[i]["year"] && cars[i]["year"] <= selectYear2)
+						toString += (cars[i]["name"] + " price: " + cars[i]["price"] + " year: " + cars[i]["year"] + " volume: " + cars[i]["volume"] + "\n")
+				alert(toString)
+			} else if(select == 3) {
+				var selectVolume1 = parseFloat(prompt("INSERT ENGINE VOLUME START FROM:"))
+				var selectVolume2 = parseFloat(prompt("INSERT ENGINE VOLUME ENDS FROM:"))
+				for(let i=0; i<cars.length; i++)
+					if(selectVolume1 <= cars[i]["volume"] && cars[i]["volume"] <= selectVolume2)
+						toString += (cars[i]["name"] + " price: " + cars[i]["price"] + " year: " + cars[i]["year"] + " volume: " + cars[i]["volume"] + "\n")
+				alert(toString)
+			} else if(select == 4) {
+				var selectPrice1 = parseInt(prompt("INSERT PRICE START FROM:"))
+				var selectPrice2 = parseInt(prompt("INSERT PRICE ENDS FROM:"))
+				for(let i=0; i<cars.length; i++)
+					if(selectPrice1 <= cars[i]["price"] && cars[i]["price"] <= selectPrice2)
+						toString += (cars[i]["name"] + " price: " + cars[i]["price"] + " year: " + cars[i]["year"] + " volume: " + cars[i]["volume"] + "\n")
+				alert(toString)
+			} else if(select == 5) break
+			else alert("Incorect insert")
+		}
+		}
+	
+		function task6() {
+		var students = []
+		while(true) {
+			var select = parseInt(prompt("PRESS 1 TO ADD STUDENT \n PRESS 2 TO LIST STUDENT \n PRESS 0 TO EXIT"))
+			if(select == 1) {
+				var name = prompt("INSERT NAME:")
+				var surname = prompt("INSERT SURNAME:")
+				var gpa = parseFloat(prompt("INSERT GPA:")).toFixed(1)
+				let newUser = {}
+				newUser.name = name;
+				newUser.surname = surname;
+				newUser.gpa = gpa;
+				students.push(newUser)
+			} else if(select == 2) {
+				for(let i = 0; i < students.length; i++)
+					console.log(students[i]["name"] + " " + students[i]["surname"] + " " + students[i]["gpa"])
+			} else if(select == 0) break
+			else alert("Incorect insert")
+		}
+		}
+
+	</script>
+
+</body>
+</html>

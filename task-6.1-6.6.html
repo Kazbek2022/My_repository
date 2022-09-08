@@ -40,7 +40,7 @@
 		for (var i = 0; i < n; i++) {
 			var a = parseInt(prompt())
 			arr.push(a)
-			sum += arr[i]
+			sum += a
 		}
 		alert("Sum " + sum + " Sr " + (sum/n))
 		}
@@ -86,8 +86,7 @@
     		{"name":"Airport", "author": "Arthur Hailey", "ISBN": "2341233", "price":"55$"},
     		]
     	let toauthor = prompt("Enter author for search")
-    	tostring = ""
-		for(var i=0;i<users.length;i++) {
+    	for(var i=0;i<users.length;i++) {
     		if(users[i]["author"] == toauthor)
     			console.log(users[i]["name"] +" "+ users[i]["author"] +" "+ users[i]["ISBN"] +" "+ users[i]["price"])    	
 		}
