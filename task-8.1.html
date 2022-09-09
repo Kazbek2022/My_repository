@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task8</title>
+	<style type="text/css">
+		.main {
+			width: 45%;
+			height: 25px;
+			display: flex;
+			margin-bottom: 10px;
+		}
+		.text_div {
+			width: 35%;
+
+		}
+		.input_div {
+			display: flex;
+			width: 65%;
+			justify-content: right;
+		}
+		.button_div {
+			display: flex;
+			width: 100%;
+			justify-content: right;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="text_div">
+			LOGIN:
+		</div>
+		<div  class="input_div">
+			<input id="inputName" type="text" name="" value = "">
+		</div>
+	</div>
+	<div class="main">
+		<div class="text_div">
+			PASSWORD:
+		</div>
+		<div class="input_div">
+			<input id="inputPass" type="password" name="" value = "">
+		</div>
+	</div>
+	<div class="main">
+		<div class="button_div">
+		<input id="buttonid" type="button" name="" value="BUTTON" style="background-color: blue; color: white; font-style: italic; font-weight: 700;">
+		</div>
+	</div>
+	<script type="text/javascript">
+		var users = [
+		{"login":"Ilyas", "password":"qwerty"},
+		{"login":"Aibek", "password":"qwerty"},
+		{"login":"Asylbek", "password":"qwerty123"},
+		{"login":"Malik", "password":"qwerty12345"},
+		{"login":"Madina", "password":"qwerty321"},
+		]
+	
+
+	buttonid.onclick = show
+	
+	function show() {
+		let login = inputName.value
+		let password = inputPass.value
+
+		if(funct(login,password)) 
+			document.body.innerHTML = "<h1>You are authenticated</h1>"
+		else{
+			inputName.style.borderColor = "red"				
+			inputPass.style.borderColor = "red"	
+			}			
+
+	function funct(login,password) {
+		let a = false
+		for (us of users) 
+			if(us["login"] == login && us["password"] == password) a = true
+		return a
+	}
+	}
+	</script>
+</body>
+</html>
