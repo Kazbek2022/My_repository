@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 8.3</title>
+</head>
+	<style type="text/css">
+		.main {
+			height: 30px;
+			width: 50%;
+			display: flex;
+			margin-bottom: 10px;
+		}
+		.main_cardDate {
+			display: flex;
+			width: 70%;
+			align-items: center;
+		}
+		.main_cardDate input {
+			height: 20px;
+			width: 15%;
+			margin-right: 10px;
+		}
+		.text{
+			width: 30%;
+			display: flex;
+			align-items: center;
+		}
+
+	</style>
+<body>
+	<div class="main">
+		<div class="text"><a>CARD:</a></div>
+		<div class="main_cardDate">
+			<input type="text" name="" value = "">
+			<input type="text" name="" value = "">
+			<input type="text" name="" value = "">
+			<input type="text" name="" value = "">
+		</div>
+	</div>
+	<div class="main">
+		<div class="text"><a>NAME SURNAME:</a></div>
+		<div class="main_cardDate"> 
+			<input style="width: 60%;" type="text" name="" value = "">
+		</div>
+	</div>
+	<div class="main">
+		<div class="text"><a>CVV:</a></div>
+		<div class="main_cardDate"> 
+			<input style="width: 20%;" type="password" name="" value = "">
+		</div>
+	</div>
+	<div>
+		<input style="background-color: darkblue; color: white; font-weight: 700;" type="button" name="" value="COMPLETE" onclick='show()'>
+	</div>
+
+	<script type="text/javascript">
+		var clients = [
+		{"card":"1212131314141515","name":"Ivan Ivanov", "cvv":"123"},
+		{"card":"1111121213131414","name":"Petr Petrov", "cvv":"321"},
+		{"card":"1313141415151616","name":"Stepan Stepanov", "cvv":"222"},
+		{"card":"1414151516161717","name":"Mariya Buynova", "cvv":"333"},
+		{"card":"1515161617171818","name":"Irina Krilova", "cvv":"777"}
+		]
+
+	function show() {
+		console.log("show started")
+		var clientDate = document.getElementsByTagName('input')
+		var card = clientDate[0].value + clientDate[1].value +clientDate[2].value + clientDate[3].value
+		var name = clientDate[4].value
+		var cvv = clientDate[5].value
+
+		if(fcheck(card,cvv)) 
+			document.body.innerHTML = "<h3>Transaction completed</h3>"
+		else document.body.innerHTML = "<h3>Invalid Data</h3>"
+		
+		function fcheck(card,cvv) {
+			var checkResult = false
+			for(var cl of clients) 
+				if(card == cl["card"] && cvv == cl["cvv"])
+					checkResult = true
+			return checkResult
+		}
+	}
+	</script>
+</body>
+</html>

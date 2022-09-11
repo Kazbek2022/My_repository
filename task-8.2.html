@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 8.2</title>
+	<style type="text/css">
+		.main {
+			display: flex;
+			width:50%;
+			height: 50px;
+			justify-content: center;
+		}
+		.main a {
+			width: 50px;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.main input {
+			width: 50px;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class = "main">
+			<input id="buttLeft" type="button" name="" value="-">
+			<a id="numberId">0</a>
+			<input id="buttRight" type="button" name="" value="+">
+	</div>
+
+	<script type="text/javascript">
+		let x = parseInt(numberId.innerText)
+		
+		buttLeft.onclick = funDecrease
+		buttRight.onclick = funIncrease
+
+		function funIncrease() {
+			numberId.innerText = parseInt(numberId.innerText) + 1
+		}
+		function funDecrease() {
+			numberId.innerText = parseInt(numberId.innerText) - 1
+		}
+
+	</script>
+
+</body>
+</html>

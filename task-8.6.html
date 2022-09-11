@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 8.6</title>
+	<style type="text/css">
+		.parent{
+			border-radius: 1%;
+			border: 1px grey solid;
+			padding: 40px;
+			width: 25%;
+		}
+		input:last-child {
+			background: black; 
+			color: white; 
+			font-weight: 500;
+			width: 100px;
+			font
+		}
+	</style>
+</head>
+
+<body>
+	<div class="parent">
+		Email:<br>
+		<input id="mailId" type="text" name=""> <br><br>
+		Password:<br>
+		<input id="passId" type="password" name=""> <br><br>
+		Retype Password:<br>
+		<input id="repassId" type="password" name=""> <br><br>
+		<input id="buttId" type="button" value="REGISTER">
+	</div>
+
+	<script type="text/javascript">
+		let mails = ["ilyas@gmail.com","aibek@mail.ru","edil@gmail.com", "madina@yandex.ru"]
+		buttId.addEventListener('click',show)
+		function show() {
+			let elem
+			let mailValid = false
+			for(let mail of mails)
+				if(mailId.value == mail) mailValid = true	
+			if(!mailValid) {
+				elem = createElem()
+				elem.innerHTML = '<a>Current email is already in use</a>'
+				mailId.after(elem)
+			}
+			if(passId.value.length < 6) {
+				elem = createElem()
+				elem.innerHTML = "<a>Password length at least must be 6 symbols</a>"
+				passId.after(elem)
+			}
+			if(passId.value != repassId.value) {
+				elem = createElem()
+				elem.innerHTML = "<a>Password are not same</a>"
+				repassId.after(elem)
+			}
+			function createElem() {
+				var elem = document.createElement('div')
+				elem.className = "new_div"
+				elem.style.color = "red"
+				elem.style.height = '1px'
+				elem.style.fontSize = "10px"
+				return elem
+			}
+		}
+	</script>
+</body>
+</html>

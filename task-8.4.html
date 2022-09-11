@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 8.4</title>
+	<style type="text/css">
+		
+		.parent {
+			border: 1px grey solid;
+			border-radius: 1%;
+			width: 600px;
+			height: 600px;
+			justify-content: center;
+		}
+		.image_div {
+			height: 90%;
+			width: 100%;
+			justify-content: center;
+			display: flex;
+		}
+		.image_div img {
+			height: 90%;
+			width: 90%;
+			justify-content: center;
+			margin-top: 5%;
+
+		}
+		.buttons_div {
+			display: flex;
+			justify-content: center;
+			margin-top: 5px;
+
+		}
+		.buttons_div input {
+			width: 100px;
+			margin-right: 5px;
+			margin-left: 5px;
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="image_div">
+			<img id="imgId" src="">
+		</div>
+		<div class="buttons_div">
+			<input type="button" value="< BACK" onclick="fshowBack()">
+			<input type="button" value="NEXT >" onclick="fshowNext()">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var imgs = [
+		"https://www.advantour.com/img/kazakhstan/images/nature.jpg",
+		"https://34travel.me/media/posts/5d2f067917c0d-20.jpg",
+		"https://www.miraterra.ru/wp-content/uploads/2016/04/nature-Kazakhstan-2.jpg",
+		"http://old.altspu.ru/uploads/posts/2013-04/1366257268_01.jpg",
+		"http://karatu.ru/wp-content/uploads/2019/01/009998.jpeg",
+		"https://34travel.me/media/upload/images/2019/july/kazakhstan/23.jpg"
+		] 
+
+	let i = 0
+	imgId.src = imgs[i]
+
+	function fshowBack() {
+		if (i == 0) i = imgs.length
+		imgId.src = imgs[--i]
+	}
+	function fshowNext() {
+		if (i == (imgs.length - 1)) i = - 1
+		imgId.src = imgs[++i]
+	}
+	</script>
+</body>
+</html>

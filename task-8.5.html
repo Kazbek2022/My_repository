@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 8.4</title>
+	<style type="text/css">
+		
+		.parent {
+			border: 1px grey solid;
+			border-radius: 1%;
+			width: 600px;
+			height: 600px;
+			justify-content: center;
+		}
+		.image_div {
+			height: 80%;
+			width: 100%;
+			justify-content: center;
+			display: flex;
+		}
+		.image_div img {
+			height: 90%;
+			width: 90%;
+			justify-content: center;
+			margin-top: 5%;
+
+		}
+		.imgList_div {
+			height: 20%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.imgList_div img {
+			width: 13%;
+			height: 50px;
+			border: 2px grey solid;
+			margin-right: 5px;
+			margin-left: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="image_div">
+			<img id="imgId" src="">
+		</div>
+		<div class="imgList_div">
+			<img id="imgId1" src="" onclick="show(0)">
+			<img id="imgId2" src="" onclick="show(1)">
+			<img id="imgId3" src="" onclick="show(2)">
+			<img id="imgId4" src="" onclick="show(3)">
+			<img id="imgId5" src="" onclick="show(4)">
+			<img id="imgId6" src="" onclick="show(5)">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var imgs = [
+		"https://www.advantour.com/img/kazakhstan/images/nature.jpg",
+		"https://34travel.me/media/posts/5d2f067917c0d-20.jpg",
+		"https://www.miraterra.ru/wp-content/uploads/2016/04/nature-Kazakhstan-2.jpg",
+		"http://old.altspu.ru/uploads/posts/2013-04/1366257268_01.jpg",
+		"http://karatu.ru/wp-content/uploads/2019/01/009998.jpeg",
+		"https://34travel.me/media/upload/images/2019/july/kazakhstan/23.jpg"
+		] 
+		imgId.src = imgs[0]
+		imgId1.src = imgs[0]
+		imgId2.src = imgs[1]
+		imgId3.src = imgs[2]
+		imgId4.src = imgs[3]
+		imgId5.src = imgs[4]
+		imgId6.src = imgs[5]
+
+		// imgId1.onclick = show
+		// imgId2.onclick = show
+		// imgId3.onclick = show
+		// imgId4.onclick = show
+		// imgId5.onclick = show
+		// imgId6.onclick = show
+
+		function show(i) {
+			imgId.src = imgs[i]
+			
+		}
+
+	</script>
+
+</body>
+</html>
+
