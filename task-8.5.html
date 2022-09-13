@@ -44,7 +44,7 @@
 		<div class="image_div">
 			<img id="imgId" src="">
 		</div>
-		<div class="imgList_div">
+		<div id="imgListId" class="imgList_div">
 			<img id="imgId1" src="" onclick="show(0)">
 			<img id="imgId2" src="" onclick="show(1)">
 			<img id="imgId3" src="" onclick="show(2)">
@@ -64,20 +64,12 @@
 		"https://34travel.me/media/upload/images/2019/july/kazakhstan/23.jpg"
 		] 
 		imgId.src = imgs[0]
-		imgId1.src = imgs[0]
-		imgId2.src = imgs[1]
-		imgId3.src = imgs[2]
-		imgId4.src = imgs[3]
-		imgId5.src = imgs[4]
-		imgId6.src = imgs[5]
-
-		// imgId1.onclick = show
-		// imgId2.onclick = show
-		// imgId3.onclick = show
-		// imgId4.onclick = show
-		// imgId5.onclick = show
-		// imgId6.onclick = show
-
+		let imgsArr = imgListId.children
+		for(let i = 0; i < imgsArr.length; i++) {
+			imgsArr[i].src = imgs[i]
+			// imgsArr[i].addEventListener('click', show(i))
+		}
+		
 		function show(i) {
 			imgId.src = imgs[i]
 			
