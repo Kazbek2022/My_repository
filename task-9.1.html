@@ -4,24 +4,91 @@
 	<title>Task 9.1</title>
 	<style type="text/css">
 		.main {
-			/*display: flex;*/
 			border:  1px grey solid;
-			border-radius: 5%;
-			width: 50%;
+			border-radius: 1%;
+			width: 25%;
+			padding: 10px;
+			background-color: blueviolet;
 		}
 		.main div {
 			width: 100%;
 			padding: 3px;
+			display: flex;
+			padding: 5px;
+		}
+		.main div:last-child {
+			width: 65%;
+			justify-content:space-between;
+		}
+		.main a {
+			width: 45%;
 
 		}
+		.main select {
+			width: 30%;
+		}
+		#saveId {
+			background-color: grey;
+			color: white;
+			border: grey;
+		}
+		#regId {
+			background-color: black;
+			color: white;
+		}
+
 	</style>
 </head>
 <body>
 	<div class="main">	
 		<div>
-			NAME:
-			<input type="text" name="">
+			<a>NAME:</a>
+			<input id="nameId" type="text" name="">
+		</div>
+		<div>
+			<a>SURNAME:</a>
+			<input id="surnameId" type="text" name="">
+		</div>
+		<div>
+			<a>COUNTRY:</a>
+			<select id="countryId">
+				<option selected>Kazakhstan</option>
+				<option>Russia</option>
+				<option>USA</option>
+			</select>
+		</div>
+		<div>
+			<a>PHONE NUMBER:</a>
+			<input id="phoneId" type="text" name="">
+		</div>
+		<div>
+			<input id="regId" type="button" value="REGISTER">
+			<input id="saveId" type="button" value="SAVE TO DRAFT">
 		</div>
 	</div>
+	<script type="text/javascript">
+		
+		
+		saveId.onclick = fSave
+
+		let fromStorage = JSON.parse(localStorage.getItem("users"))
+		nameId.value = fromStorage.name
+		surnameId.value = fromStorage.surname
+		countryId.value = fromStorage.country
+		phoneId.value = fromStorage.phone
+
+		function fSave() {
+			let name = nameId.value
+			let surname = surnameId.value
+			let country = countryId.value
+			let phone = phoneId.value
+			let user = {"name":name, "surname":surname, "country":country, "phone": phone}
+			localStorage.setItem("users", JSON.stringify(user))
+		}
+
+		// let parsedUsers = JSON.parse(userFromStorage)
+		// for(i<parsedUsers.length)
+		// 	console.log(parsedUsers[i]["name"])
+	</script>
 </body>
 </html>

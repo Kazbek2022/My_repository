@@ -1,0 +1,65 @@
+		body {
+			background-color: #e8dbda; 
+			display: flex; 
+			/*justify-content: center;*/
+		}
+		.parent {
+			border-radius: 2%;
+			border: 2px lightgrey solid;
+			background-color: white;
+			width: auto;
+			height: auto;
+			padding: 10px;
+
+		}
+		.parent > div {
+			border: 1px lightgrey solid;
+			padding: 10px;
+			margin-bottom: 5px ;
+			
+		}
+		.parent div input {
+			background-color: green;
+			color: white;
+			border: 1px green solid;
+			font-weight: 600;
+		}
+	
+		.namePrice_div a {
+			font-weight: 700;
+		}
+		.description_div {
+			margin: 5px 0px 10px;
+			font-style: italic;
+		}
+		/*//-------------------------------------------//*/
+		.parent .rowMain_div {
+			display: flex;
+			border: none;
+			border-bottom: 1px grey solid;
+			
+		}
+
+		.rowMain_div:first-child {
+			font-weight: 700;
+			border-bottom: 2px black solid;
+		}
+
+		.rowMain_div div {
+			margin: 0 5px;
+			
+		}
+		.ColLeft_div {
+			width: 200px;
+		}
+		.ColMid_div {
+			width: 100px;
+		}
+		.ColRight_div {
+			width: 50px;
+		}
+		
+
+
+
+		

@@ -45,12 +45,12 @@
 			<img id="imgId" src="">
 		</div>
 		<div id="imgListId" class="imgList_div">
-			<img id="imgId1" src="" onclick="show(0)">
-			<img id="imgId2" src="" onclick="show(1)">
-			<img id="imgId3" src="" onclick="show(2)">
-			<img id="imgId4" src="" onclick="show(3)">
-			<img id="imgId5" src="" onclick="show(4)">
-			<img id="imgId6" src="" onclick="show(5)">
+			<img id="imgId1" src="" >
+			<img id="imgId2" src="" >
+			<img id="imgId3" src="" >
+			<img id="imgId4" src="" >
+			<img id="imgId5" src="" >
+			<img id="imgId6" src="" >
 		</div>
 	</div>
 
@@ -67,12 +67,19 @@
 		let imgsArr = imgListId.children
 		for(let i = 0; i < imgsArr.length; i++) {
 			imgsArr[i].src = imgs[i]
-			// imgsArr[i].addEventListener('click', show(i))
+			imgsArr[i].value = i
+			console.log(imgsArr[i].value)
+			imgsArr[i].addEventListener('click',showTarget)
 		}
 		
-		function show(i) {
-			imgId.src = imgs[i]
-			
+		// function show() {
+		// 	imgId.src = imgs[event.target.value]
+		// 	console.log(event.target.value)
+		// }
+
+		function showTarget() {
+			imgId.src = event.target.src
+			// console.log(event.target)
 		}
 
 	</script>
